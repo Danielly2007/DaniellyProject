@@ -13,7 +13,7 @@ import com.recupera.project.danielly.domain.User;
 import com.recupera.project.danielly.service.ProjectService;
 
 @RestController
-@RequestMapping("hello-world")
+@RequestMapping("entrar")
 public class ProjectController {
 	
 	@Autowired
@@ -21,12 +21,12 @@ public class ProjectController {
 
 	@GetMapping
     public String project() {
-        return projectService.project(" Danielly");
+        return projectService.project(" professora Fiama");
     }
 	
 	@PostMapping("/{id}")
     public String projectPost(@PathVariable ("id") String id,@RequestParam(value = "filter", defaultValue = "nenhuma") String filter, @RequestBody User body) {
-        return "Hello World" + body.getName() + " " + body.getEmail() + id + filter;
+        return "Bem Vinda " + body.getName() + " " + body.getEmail() + id + filter;
     }
 
 }
